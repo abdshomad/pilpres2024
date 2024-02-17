@@ -46,7 +46,7 @@ Di MacOS / Linux: source myenv/bin/activate
 | 2.  | DONE         | Download json kabupaten/kota            | `python 01-get-kabupaten-kota-json.py`|
 | 3.  | DONE         | Download json kecamatan                 | `python 02-get-kecamatan-json.py`     |
 | 4.  | DONE         | Download json kelurahan                 | `python 03-get-kelurahan-json.py`     |
-| 5.  | DONE         | Download json tps                       | `python 04-get-tps-json.py`           |
+| 5.  | DONE         | Download json tps                       | `python 04-get-lokasi-tps-json.py`           |
 | 6.  | IN PROGRESS  | Download json hasil per TPS             | `python 05-get-json-hasil-per-tps.py` |
 | 7.  | IN PROGRESS  | Download C Plano hasil per TPS          | `python 06-get-gambar-c-plano-per-tps.py`    |
 
