@@ -81,7 +81,7 @@ for kode_kelurahan in filtered_kelurahan_df['kode']:
         else:
             # print(tps_json_file_path, ' Is not exist? Downloading ... ')
             downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
-            print(f"File '{json_filename}' downloaded.")
+            print(f"File '{downloaded_filename}' downloaded.")
             # download_json_hasil_tps(tps_json_file_path)
             # images = json.load(filename)
             # print(images)
