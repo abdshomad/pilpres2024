@@ -11,3 +11,12 @@ if not os.path.exists(file_path):
     wget.download(url, file_path)
 else:
     print(f"File {file_name} already exists in {data_dir}")
+
+import shutil
+
+source_file = "./data/0.json"
+destination_file = "./data/propinsi.json"
+
+shutil.copyfile(source_file, destination_file)
+
+print(f"File {source_file} berhasil disalin ke {destination_file}.")
