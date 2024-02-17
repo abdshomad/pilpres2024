@@ -8,6 +8,10 @@ kabupaten_kota_df = pd.read_json('./data/kabupaten_kota.json')
 kecamatan_df = pd.read_json('./data/kecamatan.json')
 # kelurahan_df = pd.read_json('./data/kelurahan.json')
 
+propinsi_df = propinsi_df.sort_values(by='kode', ascending=True)
+kabupaten_kota_df = kabupaten_kota_df.sort_values(by='kode', ascending=True)
+kecamatan_df = kecamatan_df.sort_values(by='kode', ascending=True)
+
 propinsi_df['kode'] = propinsi_df['kode'].astype(str)
 kabupaten_kota_df['kode'] = kabupaten_kota_df['kode'].astype(str)
 kecamatan_df['kode'] = kecamatan_df['kode'].astype(str)
@@ -33,11 +37,16 @@ for kode_propinsi in propinsi_df['kode']:
             url = 'https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/'+kode_propinsi+'/'+kode_kabupaten_kota+'/'+kode_kecamatan+'.json'
             print(url)
             file_path = os.path.join(directory_path, kode_propinsi, kode_kabupaten_kota, kode_kecamatan + '.json' )
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
             if os.path.exists(file_path):
                 print('File: ', file_path, ' Exists')
             else:
-                filename = wget.download(url, out=file_path)
-                print(f"File '{filename}' downloaded.")
+                try: 
+                    filename = wget.download(url, out=file_path)
+                    print(f"File '{filename}' downloaded.")
+                except: 
+                    print("Error connection... Just ignore, we can retry ")
+                    pass 
 
 import json
 import os
