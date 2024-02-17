@@ -38,7 +38,7 @@ kabupaten_kota_df = kabupaten_kota_df.sort_values(by='kode', ascending=True)
 kecamatan_df = kecamatan_df.sort_values(by='kode', ascending=True)
 # kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 
-directory_path = './data'
+directory_path = './hasil-tps/'
 
 # TEST ONLY 
 filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '0000000000'] # 3671071008

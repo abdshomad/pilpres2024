@@ -6,6 +6,9 @@ import os
 propinsi_df = pd.read_json('./data/propinsi.json')
 kabupaten_kota_df = pd.read_json('./data/kabupaten_kota.json')
 
+propinsi_df = propinsi_df.sort_values(by='kode', ascending=True)
+kabupaten_kota_df = kabupaten_kota_df.sort_values(by='kode', ascending=True)
+
 propinsi_df['kode'] = propinsi_df['kode'].astype(str)
 kabupaten_kota_df['kode'] = kabupaten_kota_df['kode'].astype(str)
 
@@ -25,6 +28,8 @@ for kode_propinsi in propinsi_df['kode']:
         url = 'https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/'+kode_propinsi+'/'+kode_kabupaten_kota+'.json'
         print(url)
         file_path = os.path.join(directory_path, kode_propinsi, kode_kabupaten_kota + '.json' )
+        print('file_path', file_path)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         if os.path.exists(file_path):
             print('File: ', file_path, ' Exists')
         else:
