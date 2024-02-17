@@ -37,7 +37,7 @@ propinsi_df_sorted = propinsi_df.sort_values(by='kode', ascending=True)
 filtered_propinsi_df = propinsi_df_sorted[propinsi_df_sorted['kode'] > '00'] # Filetr data by this value 
 kabupaten_kota_df = kabupaten_kota_df.sort_values(by='kode', ascending=True)
 kecamatan_df = kecamatan_df.sort_values(by='kode', ascending=True)
-# kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
+kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 
 directory_path = './hasil-tps/'
 
