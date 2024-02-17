@@ -4,8 +4,8 @@ import os
 import json 
 
 def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path): 
-    print('Entering redownload_json_hasil_tps_if_changed')
-    print('json_file_path', tps_json_file_path)
+    # print('Entering redownload_json_hasil_tps_if_changed')
+    # print('json_file_path', tps_json_file_path)
     images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
     # print('images_url', images_url)
     # if images_url : 
@@ -16,7 +16,7 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
         else: 
             redownload_json_hasil_tps = True 
     if redownload_json_hasil_tps: 
-        print(tps_json_file_path, ' Is not exist? Downloading ... ')
+        # print(tps_json_file_path, ' Is not exist? Downloading ... ')
         downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
         print(f"File '{downloaded_filename}' downloaded.")
 
@@ -64,7 +64,7 @@ for kode_kelurahan in filtered_kelurahan_df['kode']:
     # print('kelurahan_df', kelurahan_df)
 
     for kode_tps in kelurahan_df['kode']:
-        print('For loop kode tps ', kode_tps)
+        # print('For loop kode tps ', kode_tps)
         # print('kode_tps', kode_tps) 
         # url = 'https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/36/3671/367107/3671071008/3671071008003.json' # contoh url TPS 
         tps_url_path = os.path.join('https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/', kode_propinsi, kode_kabupaten_kota, kode_kecamatan, kode_kelurahan, kode_tps + '.json' )
@@ -79,9 +79,9 @@ for kode_kelurahan in filtered_kelurahan_df['kode']:
             redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path)
             pass 
         else:
-            print(tps_json_file_path, ' Is not exist? Downloading ... ')
+            # print(tps_json_file_path, ' Is not exist? Downloading ... ')
             downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
-            # print(f"File '{json_filename}' downloaded.")
+            print(f"File '{json_filename}' downloaded.")
             # download_json_hasil_tps(tps_json_file_path)
             # images = json.load(filename)
             # print(images)
