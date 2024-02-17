@@ -53,7 +53,7 @@ for kode_kelurahan in filtered_kelurahan_df['kode']:
 
     tps_json_kelurahan_file_path = os.path.join(directory_path, kode_propinsi, kode_kabupaten_kota, kode_kecamatan, kode_kelurahan + '.json' )
 
-    kelurahan_df = pd.read_json(tps_json_kelurahan_file_path)
+    kelurahan_df = pd.read_json(tps_json_kelurahan_file_path.replace("/hasil-tps/", "/data/"))
     kelurahan_df['kode'] = kelurahan_df['kode'].astype(str)
 
     # print('kode_propinsi', kode_propinsi)
