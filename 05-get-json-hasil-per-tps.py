@@ -74,14 +74,14 @@ for kode_kelurahan in filtered_kelurahan_df['kode']:
         # print('json_file_path', json_file_path)
         os.makedirs(os.path.dirname(tps_json_file_path), exist_ok=True)
         if os.path.exists(tps_json_file_path):
-            print('File: ', tps_json_file_path, ' Exists')
+            # print('File: ', tps_json_file_path, ' Exists')
             # print()
             redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path)
             pass 
         else:
             # print(tps_json_file_path, ' Is not exist? Downloading ... ')
             downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
-            print(f"File '{downloaded_filename}' downloaded.")
+            # print(f"File '{downloaded_filename}' downloaded.")
             # download_json_hasil_tps(tps_json_file_path)
             # images = json.load(filename)
             # print(images)
