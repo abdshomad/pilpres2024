@@ -17,6 +17,7 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
             redownload_json_hasil_tps = True 
     if redownload_json_hasil_tps: 
         # print(tps_json_file_path, ' Is not exist? Downloading ... ')
+        os.remove(tps_json_file_path)
         downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
         print(f"File '{downloaded_filename}' downloaded.")
 
