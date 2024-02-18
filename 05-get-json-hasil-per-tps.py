@@ -16,10 +16,11 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
         else: 
             redownload_json_hasil_tps = True 
     if redownload_json_hasil_tps: 
+        pass 
         # print(tps_json_file_path, ' Is not exist? Downloading ... ')
-        os.remove(tps_json_file_path)
-        downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
-        print(f"File '{downloaded_filename}' re-downloaded.")
+        # os.remove(tps_json_file_path)
+        # downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
+        # print(f"File '{downloaded_filename}' re-downloaded.")
 
 # url = 'https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/36/3671/367107/3671071008.json'
 
@@ -42,7 +43,7 @@ kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 directory_path = './hasil-tps/'
 
 # TEST ONLY 
-filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '0000000000'] # 3671071008
+filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '1212042018'] # 3671071008
 
 for kode_kelurahan in filtered_kelurahan_df['kode']: 
     print('Processing kelurahan', kode_kelurahan)
