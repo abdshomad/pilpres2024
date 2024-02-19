@@ -53,8 +53,8 @@ async def main():
         kecamatan_df = kecamatan_df.sort_values(by='kode', ascending=True)
         kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 
-        filtered_kecamatan_df = kecamatan_df[kecamatan_df['kode'] > '3173'] # 3671071008
-        filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '3671071008'] # 3671071008
+        filtered_kecamatan_df = kecamatan_df[kecamatan_df['kode'] > '0000'] # 3671071008
+        filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '0000'] # 3671071008
 
         directory_path = './hasil-tps/'
 
