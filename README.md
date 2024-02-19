@@ -3,16 +3,14 @@ Dataset pilpres 2024
 
 # Struktur Directory Data
 
-|-------------|---------------------|
 | Direktori   | Deskripsi           |
-| `/data/`   | Tempat menyimpan master data dalam format JSON. Data ini hanya berubah jika terdapat penambahan propinsi, kabupaten/kota, kecamatan, kelurahan/desa, atau TPS. |
+|-------------|---------------------|
+| `/data/`    | Tempat menyimpan master data dalam format JSON. Data ini hanya berubah jika terdapat penambahan propinsi, kabupaten/kota, kecamatan, kelurahan/desa, atau TPS. |
 | `/hasil-tps/` | Tempat menyimpan data hasil TPS dalam format JSON. Data ini bergerak mengikuti data hasil TPS yang sudah masuk ke sistem KPU. |
 | `/images/` | Tempat menyimpan gambar C Plano hasil scan/foto. |
-|-------------|---------------------|
 
 # Level di Struktur Directory `/data/`
 
-|----------|---------------------------------------------|------------------------------------------------|
 | Tingkat  | Lokasi                                      | Keterangan                                     |
 |----------|---------------------------------------------|------------------------------------------------|
 | Level 0  | `./data/0.json`                             | JSON berisi daftar propinsi dan kodenya        |
@@ -48,7 +46,6 @@ Di MacOS / Linux: source myenv/bin/activate
 
 # Workflow Pengambilan Data 
 
-|-----|--------------|-----------------------------------------|---------------------------------------|
 | No. | Status       | Tindakan                                | Perintah                              |
 |-----|--------------|-----------------------------------------|---------------------------------------|
 | 1.  | DONE         | Download json propinsi                  | `python 00-get-provinsi-json.py`      |
@@ -58,7 +55,6 @@ Di MacOS / Linux: source myenv/bin/activate
 | 5.  | DONE         | Download json tps                       | `python 04-get-lokasi-tps-json.py`           |
 | 6.  | IN PROGRESS  | Download json hasil per TPS             | `python 05-get-json-hasil-per-tps.py` |
 | 7.  | IN PROGRESS  | Download C Plano hasil per TPS          | `python 06-get-gambar-c-plano-per-tps.py`    |
-|-----|--------------|-----------------------------------------|---------------------------------------|
 
 # Simpan data di git 
 ```
