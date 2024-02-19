@@ -20,15 +20,15 @@ async def download_file(session, url, file_path):
 
 async def redownload_json_hasil_tps_if_changed(session, tps_json_file_path, tps_url_path):
     print('Entering redownload_json_hasil_tps_if_changed', session, tps_json_file_path, tps_url_path)
-    images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
-    redownload_json_hasil_tps = False
-    for image_url in images_url:
-        if not image_url:
-            redownload_json_hasil_tps = True
-            break
-    if redownload_json_hasil_tps:
-        print('Temporary, skip re-download')
-        pass 
+    # images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
+    # redownload_json_hasil_tps = False
+    # for image_url in images_url:
+    #     if not image_url:
+    #         redownload_json_hasil_tps = True
+    #         break
+    # if redownload_json_hasil_tps:
+    #     print('Temporary, skip re-download')
+    #     pass 
         # await download_file(session, tps_url_path, tps_json_file_path)
 
 async def main():
