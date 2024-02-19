@@ -27,7 +27,9 @@ async def redownload_json_hasil_tps_if_changed(session, tps_json_file_path, tps_
             redownload_json_hasil_tps = True
             break
     if redownload_json_hasil_tps:
-        await download_file(session, tps_url_path, tps_json_file_path)
+        print('Temporary, skip re-download')
+        pass 
+        # await download_file(session, tps_url_path, tps_json_file_path)
 
 async def main():
     print('Entering main')
