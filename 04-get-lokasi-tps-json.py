@@ -3,10 +3,10 @@ import pandas as pd
 import os 
 
 # Load JSON data into a pandas DataFrame
-propinsi_df = pd.read_json('./data/propinsi.json')
-kabupaten_kota_df = pd.read_json('./data/kabupaten_kota.json')
-kecamatan_df = pd.read_json('./data/kecamatan.json')
-kelurahan_df = pd.read_json('./data/kelurahan.json')
+propinsi_df = pd.read_json('./data/00-propinsi.json')
+kabupaten_kota_df = pd.read_json('./data/01-kabupaten_kota.json')
+kecamatan_df = pd.read_json('./data/02-kecamatan.json')
+kelurahan_df = pd.read_json('./data/03-kelurahan.json')
 
 propinsi_df['kode'] = propinsi_df['kode'].astype(str)
 kabupaten_kota_df['kode'] = kabupaten_kota_df['kode'].astype(str)
@@ -65,7 +65,7 @@ for kode_propinsi in filtered_propinsi_df['kode']:
 # # Initialize an empty list to store the combined JSON data
 # combined_data = []
 
-# print('Creating ', directory_path + 'kelurahan.json')
+# print('Creating ', directory_path + '03-kelurahan.json')
 
 # # Iterate over the range of file numbers from 11 to 55
 # for i in range(110101, 999999):
@@ -82,7 +82,7 @@ for kode_propinsi in filtered_propinsi_df['kode']:
 #             combined_data.extend(json_data)
 
 # # Write the combined data to merged.json
-# with open(directory_path + 'kelurahan.json', 'w') as merged_file:
+# with open(directory_path + '03-kelurahan.json', 'w') as merged_file:
 #     json.dump(combined_data, merged_file)
 
-# print("Merged JSON data has been written to kelurahan.json.")
+# print("Merged JSON data has been written to 03-kelurahan.json.")

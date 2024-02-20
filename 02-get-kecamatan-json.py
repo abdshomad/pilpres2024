@@ -3,8 +3,8 @@ import pandas as pd
 import os 
 
 # Load JSON data into a pandas DataFrame
-propinsi_df = pd.read_json('./data/propinsi.json')
-kabupaten_kota_df = pd.read_json('./data/kabupaten_kota.json')
+propinsi_df = pd.read_json('./data/00-propinsi.json')
+kabupaten_kota_df = pd.read_json('./data/01-kabupaten_kota.json')
 
 propinsi_df = propinsi_df.sort_values(by='kode', ascending=True)
 kabupaten_kota_df = kabupaten_kota_df.sort_values(by='kode', ascending=True)
@@ -60,7 +60,7 @@ for i in range(1101, 9999):
             combined_data.extend(json_data)
 
 # Write the combined data to merged.json
-with open(directory_path + 'kecamatan.json', 'w') as merged_file:
+with open(directory_path + '02-kecamatan.json', 'w') as merged_file:
     json.dump(combined_data, merged_file)
 
-print("Merged JSON data has been written to kecamatan.json.")
+print("Merged JSON data has been written to 02-kecamatan.json.")

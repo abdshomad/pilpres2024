@@ -15,7 +15,7 @@ else:
 import shutil
 
 source_file = "./data/0.json"
-destination_file = "./data/propinsi.json"
+destination_file = "./data/00-propinsi.json"
 
 shutil.copyfile(source_file, destination_file)
 

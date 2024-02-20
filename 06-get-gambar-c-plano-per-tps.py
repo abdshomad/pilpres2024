@@ -29,10 +29,10 @@ def download_images(json_file_path):
 
 # url = 'https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/36/3671/367107/3671071008.json'
 
-propinsi_df = pd.read_json('./data/propinsi.json')
-kabupaten_kota_df = pd.read_json('./data/kabupaten_kota.json')
-kecamatan_df = pd.read_json('./data/kecamatan.json')
-kelurahan_df = pd.read_json('./data/kelurahan.json')
+propinsi_df         = pd.read_json('./data/00-propinsi.json')
+kabupaten_kota_df   = pd.read_json('./data/01-kabupaten_kota.json')
+kecamatan_df        = pd.read_json('./data/02-kecamatan.json')
+kelurahan_df        = pd.read_json('./data/03-kelurahan.json')
 
 propinsi_df['kode'] = propinsi_df['kode'].astype(str)
 kabupaten_kota_df['kode'] = kabupaten_kota_df['kode'].astype(str)

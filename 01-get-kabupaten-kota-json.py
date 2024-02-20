@@ -4,7 +4,7 @@ import os
 import wget
 
 # Assuming '0.json' is in the 'data' directory
-file_path = "data/0.json"
+file_path = "data/00-propinsi.json"
 
 # Load JSON data from the file
 with open(file_path, "r") as f:
@@ -50,7 +50,7 @@ for i in range(11, 99):
             combined_data.extend(json_data)
 
 # Write the combined data to merged.json
-with open(data_directory_path + 'kabupaten_kota.json', 'w') as merged_file:
+with open(data_directory_path + '01-kabupaten_kota.json', 'w') as merged_file:
     json.dump(combined_data, merged_file)
 
-print("Merged JSON data has been written to kabupaten_kota.json.")
+print("Merged JSON data has been written to 01-kabupaten_kota.json.")
