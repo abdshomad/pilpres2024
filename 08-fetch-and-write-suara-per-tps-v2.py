@@ -12,7 +12,6 @@ async def fetch_and_save(urls):
     # print('Enter fetch_and_save ', urls)
     async with aiohttp.ClientSession() as session:
         for url in urls:
-            data = await fetch_url(session, url)
             # Extract filename from URL
             filename = url.split('/')[-1]
             # Extract directory structure from URL
@@ -25,6 +24,7 @@ async def fetch_and_save(urls):
             # Save data to file
             hasil_tps_json_file_path = os.path.join(directory, filename) 
             if not os.path.exists(hasil_tps_json_file_path):
+                data = await fetch_url(session, url)
                 with open(hasil_tps_json_file_path, 'w') as file:
                     json.dump(data, file, indent=4)
                     print('Writing : ', hasil_tps_json_file_path)
