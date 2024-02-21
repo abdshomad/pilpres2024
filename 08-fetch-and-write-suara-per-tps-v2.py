@@ -18,11 +18,16 @@ async def fetch_and_save(urls):
             # Extract directory structure from URL
             # directory = '/'.join(url.split('/')[3:-1]) # Assuming URL structure has at least 4 parts (e.g., https://example.com/part1/part2/part3/filename.json)
             directory = './hasil-tps/' + os.path.dirname(url)
+            directory = directory.replace('/pemilu/hhcw/ppwp/', '')
             # Create directory if it doesn't exist
             os.makedirs(directory, exist_ok=True)
             # Save data to file
-            with open(os.path.join(directory, filename), 'w') as file:
-                json.dump(data, file, indent=4)
+            hasil_tps_json_file_path = os.path.join(directory, filename) 
+            if not os.path.exists(hasil_tps_json_file_path):
+                with open(hasil_tps_json_file_path, 'w') as file:
+                    json.dump(data, file, indent=4)
+            else: 
+                print('Exist : ', hasil_tps_json_file_path)
 
 async def main():
     # Read URLs from file
