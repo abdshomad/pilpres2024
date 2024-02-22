@@ -4,10 +4,10 @@ import os
 import json 
 
 async def fetch_url(session, url, index):
-    print('Enter fetch_url', session, url)
+    # print('Enter fetch_url', session, url)
     async with session.get(url) as response:
         result = await response.text()
-        print(f"Fetched data from URL {index}: {url}")
+        # print(f"Fetched data from URL {index}: {url}")
         return url, result
 
 async def fetch_urls(urls, batch_index):
@@ -40,16 +40,16 @@ async def main():
             results = await fetch_urls(batch, batch_index)
             # Print results for this batch
             for url, result in results:
-                print(f"URL: {url}")
+                print(f"URL Result: {url}")
                 filename = url.split('/')[-1]
                 directory = os.path.dirname(url)
-                directory = './hasil-tps-v2/' + os.path.dirname(url)
+                directory = './hasil-tps/' + os.path.dirname(url)
                 directory = directory.replace('/pemilu/hhcw/ppwp/', '')
                 directory = directory.replace('https://sirekap-obj-data.kpu.go.id', '')
                 os.makedirs(directory, exist_ok=True)
                 hasil_tps_json_file_path = os.path.join(directory, filename) 
                 if not os.path.exists(hasil_tps_json_file_path):
-                    print("Result:")
+                    # print("Result:")
                     print(result)
                     with open(hasil_tps_json_file_path, 'w') as file:
                         # json.dump(result, file, indent=4)
@@ -60,7 +60,6 @@ async def main():
         else: 
             print("Exit, i = ", i)
             exit() 
-
 
 if __name__ == "__main__":
     asyncio.run(main())
