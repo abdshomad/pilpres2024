@@ -41,7 +41,7 @@ async def main():
 
 
     # Divide URLs into batches
-    batch_size = 40
+    batch_size = 100
     url_batches = [urls[i:i + batch_size] for i in range(0, len(urls), batch_size)]
 
     # Fetch URLs asynchronously in batches
