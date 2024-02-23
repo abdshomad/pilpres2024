@@ -17,11 +17,14 @@ async def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path)
         else: 
             redownload_json_hasil_tps = True 
     if redownload_json_hasil_tps: 
-        pass 
+        # pass 
         # print(tps_json_file_path, ' Is not exist? Downloading ... ')
         os.remove(tps_json_file_path)
         downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
         print(f"File '{downloaded_filename}' re-downloaded.")
+        result = json.load(downloaded_filename)
+        print(result)
+    return result
 
 async def fetch_url(session, url, index):
     # print('Enter fetch_url', session, url)
@@ -37,8 +40,8 @@ async def fetch_url(session, url, index):
             result = await response.text()
             # print(f"Fetched data from URL {index}: {url}")
         else: 
-            result = ''
-            redownload_json_hasil_tps_if_changed(hasil_tps_json_file_path, url)
+            # result = ''
+            result = redownload_json_hasil_tps_if_changed(hasil_tps_json_file_path, url)
         return url, result
 
 async def fetch_urls(urls, batch_index):
