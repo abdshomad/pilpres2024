@@ -20,9 +20,9 @@ async def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path)
         # pass 
         # print(tps_json_file_path, ' Is not exist? Downloading ... ')
         os.remove(tps_json_file_path)
-        downloaded_filename = await wget.download(tps_url_path, out=tps_json_file_path)
+        downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
         print(f"File '{downloaded_filename}' re-downloaded.")
-        result = await json.load(downloaded_filename)
+        result = json.load(open(downloaded_filename, 'r'))  # Corrected to open the file before loading
         print(result)
     return result
 
