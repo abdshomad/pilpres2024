@@ -5,10 +5,10 @@ import json
 import wget 
 
 async def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path): 
-    # print('Entering redownload_json_hasil_tps_if_changed')
-    # print('json_file_path', tps_json_file_path)
+    print('Entering redownload_json_hasil_tps_if_changed')
+    print('json_file_path', tps_json_file_path)
     images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
-    # print('images_url', images_url)
+    print('images_url', images_url)
     # if images_url : 
     redownload_json_hasil_tps = False  
     for image_url in images_url: 
@@ -20,9 +20,9 @@ async def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path)
         # pass 
         # print(tps_json_file_path, ' Is not exist? Downloading ... ')
         os.remove(tps_json_file_path)
-        downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
+        downloaded_filename = await wget.download(tps_url_path, out=tps_json_file_path)
         print(f"File '{downloaded_filename}' re-downloaded.")
-        result = json.load(downloaded_filename)
+        result = await json.load(downloaded_filename)
         print(result)
     return result
 
@@ -41,7 +41,7 @@ async def fetch_url(session, url, index):
             # print(f"Fetched data from URL {index}: {url}")
         else: 
             # result = ''
-            result = redownload_json_hasil_tps_if_changed(hasil_tps_json_file_path, url)
+            result = await redownload_json_hasil_tps_if_changed(hasil_tps_json_file_path, url)
         return url, result
 
 async def fetch_urls(urls, batch_index):
