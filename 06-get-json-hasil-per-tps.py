@@ -6,11 +6,11 @@ import json
 def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path): 
     # print('Entering redownload_json_hasil_tps_if_changed')
     # print('json_file_path', tps_json_file_path)
-    images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
+    redownload_json_hasil_tps = False  
     # print('images_url', images_url)
     # if images_url : 
-    redownload_json_hasil_tps = False  
     try: 
+        images_url = json.load(open(tps_json_file_path, 'r')).get('images', [])
         for image_url in images_url: 
             if image_url: 
                 pass 
@@ -46,7 +46,7 @@ kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 directory_path = './hasil-tps/'
 
 # TEST ONLY 
-filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '127100000'] # 3671071008
+filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '127115000'] # 3671071008
 
 for kode_kelurahan in filtered_kelurahan_df['kode']: 
     print('Processing kelurahan', kode_kelurahan)
