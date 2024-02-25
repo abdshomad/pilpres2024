@@ -38,7 +38,7 @@ async def main():
     print("Read URLs from file", urls_file)
     with open(urls_file, "r") as file:
         # urls = [line.strip() for line in file.readlines()]
-        urls = [line.strip() for line in file.readlines() if "1271000000000" < line.split('/')[-1].strip()]
+        urls = [line.strip() for line in file.readlines() if "1274000000000" < line.split('/')[-1].strip()]
 
 
     # Divide URLs into batches
