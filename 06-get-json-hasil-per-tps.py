@@ -15,7 +15,7 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
             pass 
         else: 
             redownload_json_hasil_tps = True 
-            print('Image: ', image_url, ' is blank in ', tps_json_file_path, ' Re-downloading JSON ... ')
+            # print('Image: ', image_url, ' is blank in ', tps_json_file_path, ' Re-downloading JSON ... ')
     if redownload_json_hasil_tps: 
         # pass 
         os.remove(tps_json_file_path)
@@ -43,7 +43,7 @@ kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 directory_path = './hasil-tps/'
 
 # TEST ONLY 
-filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '111000000'] # 3671071008
+filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '111100000'] # 3671071008
 
 for kode_kelurahan in filtered_kelurahan_df['kode']: 
     print('Processing kelurahan', kode_kelurahan)
