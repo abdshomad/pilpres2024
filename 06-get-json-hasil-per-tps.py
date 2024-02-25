@@ -10,12 +10,15 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
     # print('images_url', images_url)
     # if images_url : 
     redownload_json_hasil_tps = False  
-    for image_url in images_url: 
-        if image_url: 
-            pass 
-        else: 
-            redownload_json_hasil_tps = True 
-            # print('Image: ', image_url, ' is blank in ', tps_json_file_path, ' Re-downloading JSON ... ')
+    try: 
+        for image_url in images_url: 
+            if image_url: 
+                pass 
+            else: 
+                redownload_json_hasil_tps = True 
+                # print('Image: ', image_url, ' is blank in ', tps_json_file_path, ' Re-downloading JSON ... ')
+    except: 
+        redownload_json_hasil_tps = True
     if redownload_json_hasil_tps: 
         # pass 
         os.remove(tps_json_file_path)
