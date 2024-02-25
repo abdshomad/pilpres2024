@@ -15,12 +15,12 @@ def redownload_json_hasil_tps_if_changed(tps_json_file_path, tps_url_path):
             pass 
         else: 
             redownload_json_hasil_tps = True 
+            print('Image: ', image_url, ' is blank in ', tps_json_file_path, ' Re-downloading JSON ... ')
     if redownload_json_hasil_tps: 
-        pass 
-        # print(tps_json_file_path, ' Is not exist? Downloading ... ')
-        # os.remove(tps_json_file_path)
-        # downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
-        # print(f"File '{downloaded_filename}' re-downloaded.")
+        # pass 
+        os.remove(tps_json_file_path)
+        downloaded_filename = wget.download(tps_url_path, out=tps_json_file_path)
+        print(f"File '{downloaded_filename}' re-downloaded.")
 
 # url = 'https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/36/3671/367107/3671071008.json'
 
