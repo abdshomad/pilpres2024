@@ -2,7 +2,7 @@
 import aiohttp
 import asyncio
 import os
-import json 
+import json
 
 async def fetch_url(session, url, index):
     # print('Enter fetch_url', session, url)
@@ -13,11 +13,11 @@ async def fetch_url(session, url, index):
         directory = directory.replace('/pemilu/hhcw/ppwp/', '')
         directory = directory.replace('https://sirekap-obj-data.kpu.go.id', '')
         os.makedirs(directory, exist_ok=True)
-        hasil_tps_json_file_path = os.path.join(directory, filename) 
+        hasil_tps_json_file_path = os.path.join(directory, filename)
         if not os.path.exists(hasil_tps_json_file_path):
             result = await response.text()
             # print(f"Fetched data from URL {index}: {url}")
-        else: 
+        else:
             result = ''
         return url, result
 
@@ -46,10 +46,10 @@ async def main():
     url_batches = [urls[i:i + batch_size] for i in range(0, len(urls), batch_size)]
 
     # Fetch URLs asynchronously in batches
-    i = 0 
+    i = 0
     for batch_index, batch in enumerate(url_batches):
-        i = i + 1 
-        if i < 200000000: 
+        i = i + 1
+        if i < 200000000:
             results = await fetch_urls(batch, batch_index)
             # Print results for this batch
             for url, result in results:
@@ -60,7 +60,7 @@ async def main():
                 directory = directory.replace('/pemilu/hhcw/ppwp/', '')
                 directory = directory.replace('https://sirekap-obj-data.kpu.go.id', '')
                 os.makedirs(directory, exist_ok=True)
-                hasil_tps_json_file_path = os.path.join(directory, filename) 
+                hasil_tps_json_file_path = os.path.join(directory, filename)
                 if True or not os.path.exists(hasil_tps_json_file_path):
                     # print("Result:")
                     # print(result)
@@ -68,11 +68,11 @@ async def main():
                         # json.dump(result, file, indent=4)
                         file.write(result)
                         print('Writing : ', hasil_tps_json_file_path)
-                else: 
+                else:
                     print('Exist : ', hasil_tps_json_file_path)
-        else: 
+        else:
             print("Exit, i = ", i)
-            exit() 
+            exit()
 
 if __name__ == "__main__":
     asyncio.run(main())
