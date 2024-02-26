@@ -1,13 +1,33 @@
 {
+    "mode": "hhcw",
     "chart": null,
     "images": [
+        "https://sirekap-obj-formc.kpu.go.id/c573/pemilu/ppwp/34/04/10/20/02/3404102002002-20240224-144557--a77e757e-0e14-49b5-942f-e3e9f9e383ea.jpg",
         null,
-        null,
-        null
+        "https://sirekap-obj-formc.kpu.go.id/c573/pemilu/ppwp/34/04/10/20/02/3404102002002-20240224-144848--bc329c58-f84a-4bbc-9cf9-b747d8930717.jpg"
     ],
-    "administrasi": null,
-    "psu": null,
-    "ts": "2024-02-15 07:00:44",
+    "administrasi": {
+        "suara_sah": 144,
+        "suara_total": 147,
+        "pemilih_dpt_j": 205,
+        "pemilih_dpt_l": 94,
+        "pemilih_dpt_p": 111,
+        "pengguna_dpt_j": 145,
+        "pengguna_dpt_l": 67,
+        "pengguna_dpt_p": 78,
+        "pengguna_dptb_j": 0,
+        "pengguna_dptb_l": 0,
+        "pengguna_dptb_p": 0,
+        "suara_tidak_sah": 3,
+        "pengguna_total_j": 147,
+        "pengguna_total_l": 68,
+        "pengguna_total_p": 79,
+        "pengguna_non_dpt_j": 2,
+        "pengguna_non_dpt_l": 1,
+        "pengguna_non_dpt_p": 1
+    },
+    "psu": "Penghitungan Suara Ulang",
+    "ts": "2024-02-25 09:00:00",
     "status_suara": false,
-    "status_adm": false
+    "status_adm": true
 }
