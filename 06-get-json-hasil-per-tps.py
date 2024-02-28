@@ -46,7 +46,7 @@ kelurahan_df = kelurahan_df.sort_values(by='kode', ascending=True)
 directory_path = './hasil-tps/'
 
 # TEST ONLY 
-filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '3303050000'] # 3671071008
+filtered_kelurahan_df = kelurahan_df[kelurahan_df['kode'] > '3312000000'] # 3671071008
 
 for kode_kelurahan in filtered_kelurahan_df['kode']: 
     print('Processing kelurahan', kode_kelurahan)
