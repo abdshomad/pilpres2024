@@ -1,13 +1,38 @@
 {
-    "chart": null,
+    "mode": "hhcw",
+    "chart": {
+        "null": null,
+        "100025": 14,
+        "100026": 120,
+        "100027": 1
+    },
     "images": [
-        null,
-        null,
-        null
+        "https://sirekap-obj-formc.kpu.go.id/ebd8/pemilu/ppwp/75/01/21/20/01/7501212001005-20240227-153844--93b3b775-9fc8-4c47-a3e7-49a942b35c64.jpg",
+        "https://sirekap-obj-formc.kpu.go.id/ebd8/pemilu/ppwp/75/01/21/20/01/7501212001005-20240227-153845--f3ddde71-f532-4afb-bd14-9b4e627e892e.jpg",
+        "https://sirekap-obj-formc.kpu.go.id/ebd8/pemilu/ppwp/75/01/21/20/01/7501212001005-20240227-153845--cea55edc-f5fc-4cd6-99cd-c256b2ea3d4d.jpg"
     ],
-    "administrasi": null,
+    "administrasi": {
+        "suara_sah": 135,
+        "suara_total": 137,
+        "pemilih_dpt_j": 147,
+        "pemilih_dpt_l": 85,
+        "pemilih_dpt_p": 62,
+        "pengguna_dpt_j": 136,
+        "pengguna_dpt_l": 77,
+        "pengguna_dpt_p": 59,
+        "pengguna_dptb_j": 136,
+        "pengguna_dptb_l": 77,
+        "pengguna_dptb_p": 59,
+        "suara_tidak_sah": 2,
+        "pengguna_total_j": 137,
+        "pengguna_total_l": 78,
+        "pengguna_total_p": 59,
+        "pengguna_non_dpt_j": 1,
+        "pengguna_non_dpt_l": 1,
+        "pengguna_non_dpt_p": 0
+    },
     "psu": null,
-    "ts": "2024-02-15 07:00:44",
-    "status_suara": false,
-    "status_adm": false
+    "ts": "2024-02-27 22:00:00",
+    "status_suara": true,
+    "status_adm": true
 }
